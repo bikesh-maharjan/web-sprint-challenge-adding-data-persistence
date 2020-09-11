@@ -1,13 +1,20 @@
-
-exports.seed = function(knex) {
+exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
-    .then(function () {
-      // Inserts seed entries
-      return knex('table_name').insert([
-        {id: 1, colName: 'rowValue1'},
-        {id: 2, colName: 'rowValue2'},
-        {id: 3, colName: 'rowValue3'}
-      ]);
-    });
+  return knex("projects").insert([
+    {
+      name: "Learn to play guitar",
+      desc: "Watch youtube everyday for an hour to learn basic guitar",
+      completed: false,
+    },
+    {
+      name: "Build a Website",
+      desc: "It is not an easy task to make a website from scratch",
+      completed: false,
+    },
+    {
+      name: "Baby Photographs",
+      desc: "It may look easy to take photos of babies but you need paitence",
+      completed: false,
+    },
+  ]);
 };
