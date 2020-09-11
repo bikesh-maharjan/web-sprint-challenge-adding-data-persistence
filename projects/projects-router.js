@@ -74,13 +74,16 @@ router.post("/resources", (req, res) => {
     });
 });
 
-router.post("/tasks", (req, res) => {
-  Projects.addTasks(req.body)
-    .then((etask) => {
-      res.status(201).json(etask);
+router.post("/tasks/:id", (req, res) => {
+  const data = req.body;
+  data.project_id = req.params.id;
+  //   res.send(data);
+  Projects.addTasks(data)
+    .then((task) => {
+      res.status(201).json(task);
     })
     .catch((error) => {
-      res.status(400).json({ errorMessage: error });
+      res.status(500).json({ errorMessage: error });
     });
 });
 

@@ -23,7 +23,10 @@ function getTasks() {
 }
 
 function getTaskForProject(id) {
-  return db("id").where({ project_id: id });
+  return db("tasks")
+    .where({ project_id: id })
+    .join("projects", "projects.id", "tasks.projects_id")
+    .select("projects.name", "projects.desc", "tasks.name", "tasks.desc");
 }
 
 function addProject(project) {
@@ -35,5 +38,7 @@ function addResource(resource) {
 }
 
 function addTasks(task) {
+  // console.log(task);
   return db("tasks").insert(task);
+  // console.log(letsWork);
 }
