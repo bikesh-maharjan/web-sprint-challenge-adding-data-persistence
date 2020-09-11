@@ -14,7 +14,7 @@ exports.seed = function (knex) {
     {
       name: "Baby Photographs",
       desc: "It may look easy to take photos of babies but you need paitence",
-      completed: false,
+      completed: true,
     },
   ]);
 };
