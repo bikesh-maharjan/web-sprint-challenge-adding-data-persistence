@@ -34,6 +34,6 @@ function addResource(resource) {
   return db("resources").insert(resource);
 }
 
-function addTasks() {
+function addTasks(task) {
   return db("tasks").insert(task);
 }

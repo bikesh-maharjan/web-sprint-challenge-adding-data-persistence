@@ -15,7 +15,7 @@ exports.up = function (knex) {
       tbl.increments();
       tbl.text("desc", 255).notNullable();
       tbl.text("notes", 255);
-      tbl.boolean("completed").notNullable().defaultTo(false);
+      tbl.boolean("completed").defaultTo(false);
 
       tbl
         .integer("project_id")

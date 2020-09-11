@@ -60,7 +60,7 @@ router.post("/", (req, res) => {
       res.status(201).json(addproject);
     })
     .catch((error) => {
-      res.status(400).json({ errorMessage: "Couldn't add the item" });
+      res.status(400).json({ errorMessage: error });
     });
 });
 
@@ -70,17 +70,17 @@ router.post("/resources", (req, res) => {
       res.status(201).json(resource);
     })
     .catch((error) => {
-      res.status(400).json({ errorMessage: "Couldn't add the item" });
+      res.status(400).json({ errorMessage: error });
     });
 });
 
 router.post("/tasks", (req, res) => {
   Projects.addTasks(req.body)
-    .then((task) => {
-      res.status(201).json(task);
+    .then((etask) => {
+      res.status(201).json(etask);
     })
     .catch((error) => {
-      res.status(400).json({ errorMessage: "Couldn't add the item" });
+      res.status(400).json({ errorMessage: error });
     });
 });
 
