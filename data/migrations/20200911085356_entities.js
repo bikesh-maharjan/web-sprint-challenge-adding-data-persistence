@@ -1,5 +1,3 @@
-const { table } = require("../dbConfig");
-
 exports.up = function (knex) {
   return knex.schema
     .createTable("projects", (tbl) => {
@@ -39,7 +37,7 @@ exports.up = function (knex) {
         .onDelete("CASCADE");
 
       tbl
-        .integer("resource_id")
+        .integer("resouce_id")
         .unsigned()
         .notNullable()
         .references("id")
