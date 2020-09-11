@@ -39,7 +39,7 @@ exports.up = function (knex) {
         .onDelete("CASCADE");
 
       tbl
-        .integer("resouce_id")
+        .integer("resource_id")
         .unsigned()
         .notNullable()
         .references("id")
